@@ -101,3 +101,4 @@ C:\Users\st310-10\Desktop\pr5_okfks\pr5_okfks\obj\Debug\net8.0\refint\pr5_okfks.
 C:\Users\st310-10\Desktop\pr5_okfks\pr5_okfks\obj\Debug\net8.0\pr5_okfks.pdb
 C:\Users\st310-10\Desktop\pr5_okfks\pr5_okfks\obj\Debug\net8.0\pr5_okfks.genruntimeconfig.cache
 C:\Users\st310-10\Desktop\pr5_okfks\pr5_okfks\obj\Debug\net8.0\ref\pr5_okfks.dll
+C:\Users\st310-10\Desktop\pr5_okfks\pr5_okfks\obj\Debug\net8.0\pr5_okfks.sourcelink.json

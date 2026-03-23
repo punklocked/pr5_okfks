@@ -165,7 +165,6 @@ namespace pr5_okfks
             char[] letters = { 'k', 'l', 'a', 'v', 'a', 'k', 'o', 'k', 'a' };
 
             string searchTBox = "//*[@id=\"searchInput\"]";
-            string emptyList = "//*[@id=\"notesList\"]/li";
 
             string expected = "empty";
 
@@ -179,13 +178,15 @@ namespace pr5_okfks
 
             Thread.Sleep(3000);
             IWebElement searchElement = _webDriver.FindElement(By.XPath(searchTBox));
-            IWebElement emptyElement = _webDriver.FindElement(By.XPath(emptyList));
 
             for (int i = 0; i < letters.Length; i++)
             {
                 searchElement.SendKeys($"{letters[i]}");
                 Thread.Sleep(300);
             }
+
+            string emptyList = "//*[@id=\"notesList\"]/li";
+            IWebElement emptyElement = _webDriver.FindElement(By.XPath(emptyList));
 
             string actualClass = emptyElement.GetAttribute("class");
 
