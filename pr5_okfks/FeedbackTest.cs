@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,6 +43,9 @@ namespace pr5_okfks
             string saveBtn = "//*[@id=\"saveBtn\"]";
 
             string falseLoginText = "Неверный логин или пароль.";
+            string saveNoteText = "Заметка создана.";
+            string editNoteText = "Заметка обновлена.";
+            string deleteNoteText = "Заметка удалена.";
 
             IWebElement loginElement = _webDriver.FindElement(By.XPath(loginTBox));
             IWebElement passElement = _webDriver.FindElement(By.XPath(passTBox));
@@ -55,6 +59,57 @@ namespace pr5_okfks
             string loginMessage = "//*[@id=\"message\"]/span";
             IWebElement loginMessageElement = _webDriver.FindElement(By.XPath(loginMessage));
 
+            Assert.Equal(falseLoginText, loginMessageElement.Text);
+
+            loginElement.Clear();
+            passElement.Clear();
+            loginElement.SendKeys(loginInput);
+            passElement.SendKeys(passInput);
+            btnElement.Click();
+
+            Thread.Sleep(1000);
+
+            IWebElement titleElement = _webDriver.FindElement(By.XPath(titleTBox));
+            IWebElement contentElement = _webDriver.FindElement(By.XPath(contentTBox));
+            IWebElement saveElement = _webDriver.FindElement(By.XPath(saveBtn));
+            IWebElement exitElement = _webDriver.FindElement(By.XPath(exitBtn));
+
+            titleElement.SendKeys(titleInput);
+            contentElement.SendKeys(contentInput);
+            saveElement.Click();
+
+            Thread.Sleep(1000);
+
+            Thread.Sleep(1000);
+
+            string saveNoteMessage = "//*[@id=\"message\"]/span";
+            IWebElement saveNoteElement = _webDriver.FindElement(By.XPath(saveNoteMessage));
+
+            Assert.Equal(saveNoteText, saveNoteElement.Text);
+
+            titleElement.SendKeys(newTitleInput);
+            contentElement.SendKeys(contentInput);
+            saveElement.Click();
+
+            Thread.Sleep(1000);
+
+            string editNoteMessage = "//*[@id=\"message\"]/span";
+            IWebElement editNoteElement = _webDriver.FindElement(By.XPath(editNoteMessage));
+
+            Assert.Equal(editNoteText, editNoteElement.Text);
+
+            Thread.Sleep(1000);
+
+            IWebElement deleteElement = _webDriver.FindElement(By.XPath(deleteBtn));
+            deleteElement.Click();
+            _webDriver.SwitchTo().Alert().Accept();
+
+            Thread.Sleep(1000);
+
+            string deleteMessage = "//*[@id=\"message\"]/span";
+            IWebElement deleteNoteElement = _webDriver.FindElement(By.XPath(deleteMessage));
+            Assert.Equal(deleteNoteText, deleteNoteElement.Text);
+            _webDriver.Close();
         }
     }
 }

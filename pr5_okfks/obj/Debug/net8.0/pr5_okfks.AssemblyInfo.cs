@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pr5_okfks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbfeb8dde60711880d682a4f22b6fcabf4f3fbf9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+360bdadd66756770570eef69c006c1d18d52ac59")]
 [assembly: System.Reflection.AssemblyProductAttribute("pr5_okfks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pr5_okfks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
